@@ -1,0 +1,139 @@
+.nav-panel {
+	width: 100%;
+	position: relative;
+	display: block;  
+	background-color: $secondary;
+	transition: all 0.5s;
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		+ .header-jumbo {
+			margin-top: 50px;
+		}
+	}
+}
+.nav-panel-head{ 
+	display: inline-block;
+	padding: 1rem;
+	vertical-align: middle;
+	clear:both;
+	width: 70%;
+	@media (min-width: 40em) {
+		padding-left: 10%;
+	}
+	.logo {
+		float: left;
+		text-transform: uppercase;
+		padding: 5px 10px;
+		border: 1px solid $accent;
+		border-radius: 10px 0 10px 10px; 
+		cursor: pointer;
+	}
+	.nav-panel-social {
+		float: right;
+		padding-top: 3px;
+		margin-right: 3%;
+		display: none;
+		transition: opacity 0.5s ease;
+		li {
+			float: left;
+			padding-left: 2.8rem;
+			transition: opacity 0.5s ease;
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+		.social-icons {
+			display: block;
+			text-align: center;
+			width: 23px;
+			height: 26px;
+			background-position: center;
+			background-repeat: no-repeat;
+			&.icon1 { background-image: url('../img/icons/icon-fb.png'); }
+			&.icon2 { background-image: url('../img/icons/icon-instagram.png'); }
+			&.icon3 { background-image: url('../img/icons/icon-twitter.png'); }
+			&.icon4 { background-image: url('../img/icons/icon-linkedin.png'); }
+		}
+		@media (min-width: 40em) {
+			display: inline-block;
+		}		
+	}
+}
+input[type="checkbox"] {
+	display: none;
+}
+.nav-main-toggle {
+	display: inline-block;
+	float: right;
+	vertical-align: middle;
+	cursor: pointer;
+	width: 30%;
+	padding: calc(1rem + 2px) 0;
+	transition: all 0.5s ease;
+	.nav-toggle-wrap {
+		width: 28px;
+		height: 30px;
+		margin: 0 1rem 0 0;
+		float: right;
+		div {
+			width: 90%;
+			height: 2px;
+			background-color: $primary;
+			transition: all 0.5s;
+			margin: 6px auto;
+		}
+	}
+	p {
+		text-transform: uppercase;
+		display: none;
+		color: rgba($secondary, 0.7);
+		line-height: 30px;
+		vertical-align: middle;
+	}
+	@media (min-width: 40em) {
+		background: #000;
+		.nav-toggle-wrap {
+			float: left;
+			margin-left: 12%;
+			div {
+				background-color: rgba($secondary, 0.7);
+			}
+		}
+		p {
+			display: inline-block;
+		}
+	}
+}
+.nav-main {
+	width: 100%;
+	height: calc(100vh - 52px);
+	text-align: center;
+	background-color: #000;
+	position: absolute;
+	transform: translate(150%, 0%);
+	z-index: 5;
+	transition: all 1s ease;
+	ul {
+		padding: 10vh 0;
+	}
+	a {
+		display: block;
+		width: 100%;
+		font-size: 2rem;
+		text-transform: uppercase;
+		padding: 2vh 0;
+		color: $secondary;
+		transition: all 0.5s ease;
+		&:hover,
+		&:active {
+			background-color: rgba($primary, 0.8);
+		}
+	}
+ }
+input[type="checkbox"]:checked ~ .nav-main {
+	transform: translate(0%, 0%);
+
+}
